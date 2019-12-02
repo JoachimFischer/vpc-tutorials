@@ -41,7 +41,7 @@ resource "ibm_is_instance" "instance" {
   vpc            = "${ibm_is_vpc.vpc.id}"
   zone           = "${var.subnet_zone}"
   profile        = "${module.map_gen1_to_gen2.profile}"
-  image          = "${data.ibm_is_image.ds_image.id}"
+  image          = "${data.ibm_is_image.select_image.id}"
   keys           = ["${data.ibm_is_ssh_key.ds_key.id}"]
   resource_group = "${data.ibm_resource_group.group.id}"
 
